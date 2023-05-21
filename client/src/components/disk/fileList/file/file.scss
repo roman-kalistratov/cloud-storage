@@ -1,0 +1,168 @@
+@import '../../../../assets/styles/vars';
+
+.file {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: solid 1px $border-color;
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  align-items: center;
+  transition: box-shadow .2s ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 2px 0px rgb(143, 150, 151);
+
+    &:hover .file__date {
+      grid-column-start: 5;
+    }
+
+    &:hover .file__size {
+      display: none;
+      grid-column-start: 6;
+    }
+
+    &:hover .file__download,
+    &:hover .file__delete {
+      display: block;
+
+      @keyframes show_btn {
+        from {
+          transform: translateX(100px);
+        }
+
+        to {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    grid-column-start: 6;
+    justify-self: center;
+
+    & svg {
+      font-size: 20px;
+    }
+  }
+
+  &__download {
+    margin-right: 10px;
+  }
+
+  &__delete svg {
+    fill: red;
+  }
+
+  &__img {
+    justify-self: center;
+    width: 50px;
+  }
+
+  &__date {
+    grid-column-start: 5;
+    justify-self: center;
+  }
+
+  &__size {
+    grid-column-start: 6;
+    justify-self: center;
+  }
+
+  &__btn {
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    & {
+      grid-template-columns: 1fr 2fr repeat(2, 1fr);     
+      
+      &:hover {       
+    
+        &:hover .file__date {
+          grid-column-start: 3;
+        }
+    
+        &:hover .file__size {
+          display: none;
+          grid-column-start: 4;
+        }
+      }
+    }
+
+    &__btns,
+    &__size {
+      grid-column-start: 4;
+    }
+
+    &__download,
+    &__delete {
+      padding: 5px !important;
+    }
+
+    &__btns {          
+      & svg {
+        font-size: 15px;       
+      }
+    }
+
+    &__date {
+      grid-column-start: 3;
+    }
+
+    &__img {
+      width: 25px;      
+    }
+
+
+  }
+}
+
+.file-plate {
+  margin: 10px 0;
+  width: 200px;
+  height: 200px;
+  max-height: 200px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  gap: 5px;
+  padding: 10px 10px;
+
+  &:hover {
+    box-shadow: 0px 3px 2px -1px rgb(143, 150, 151);
+  }
+
+  &__img {
+    width: 70px;
+    flex: 0 0 auto;
+  }
+
+  &__name {
+    flex: 1 0 auto;
+    text-align: center;
+  }
+
+  &__btns {
+    display: flex;
+    margin-top: 10px;
+    flex: 0 0 auto;
+
+    & svg {
+      font-size: 20px;
+    }
+  }
+
+
+
+  &__download {
+    margin-right: 5px;
+  }
+}

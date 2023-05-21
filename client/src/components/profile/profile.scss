@@ -1,0 +1,20 @@
+.profile {
+    &__btns {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__upload {
+        margin-right: 10px;
+    }
+
+    &__upload-input {
+        display: none;
+    }
+
+    &__back {
+        margin-right: auto;
+    }
+}

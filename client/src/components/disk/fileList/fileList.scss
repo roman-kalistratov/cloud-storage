@@ -1,0 +1,67 @@
+@import '../../../assets/styles/vars';
+
+.filelist {
+  margin: 30px 0;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 4fr repeat(4, 1fr);
+    padding: 0 10px;
+  }
+
+  &__name {
+    grid-column-start: 2;
+  }
+
+  &__date {
+    grid-column-start: 5;
+    justify-self: center;
+  }
+
+  &__size {
+    grid-column-start: 6;
+    justify-self: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    & {
+      font-size: 0.9rem;
+      margin: 15px 0;
+    }
+
+    &__header {
+      grid-template-columns: 1fr 2fr repeat(2, 1fr);
+    }
+
+    &__date {
+      grid-column-start: 3;
+    }
+  
+    &__size {
+      grid-column-start: 4;
+    }
+  }
+}
+
+.fileplate {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  gap: 15px;
+}
+
+.file-enter-active {
+  animation: file-enter 1s forwards;
+}
+
+@keyframes file-enter {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
